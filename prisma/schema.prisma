@@ -11,13 +11,12 @@ datasource db {
 }
 
 model Temperature {
-  id         String @id @default(auto()) @map("_id") @db.ObjectId
-  value      Float
-  maxValue   Float
-  minValue   Float
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  value Float
   lat        String
   long       String
-  cityId     String
+  cityId     String @db.ObjectId
+  city       City   @relation(fields: [cityId], references: [id])
   pressure   Float
   humidity   Float
   visibility Float
@@ -26,8 +25,11 @@ model Temperature {
 }
 
 model City {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
-  name    String
-  state   String
-  country String
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  state       String
+  country     String
+  Temperature Temperature[]
+  maxValue    Float
+  minValue    Float
 }

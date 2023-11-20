@@ -2,8 +2,6 @@ import { Temperature } from '../entities/Temperature';
 
 interface ITemperatureRepositorySaveParams {
   value: number;
-  maxValue: number;
-  minValue: number;
   lat: string;
   long: string;
   cityId: string;

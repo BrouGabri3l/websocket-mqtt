@@ -2,8 +2,6 @@ import { ITemperatureRepository } from '../Repositories/ITemperatureRepository';
 
 interface ISaveTemperatureParams {
   value: number;
-  maxValue: number;
-  minValue: number;
   lat: string;
   long: string;
   cityId: string;

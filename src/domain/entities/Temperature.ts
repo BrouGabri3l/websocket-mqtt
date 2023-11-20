@@ -1,7 +1,6 @@
 export class Temperature {
   value: number;
-  maxValue: number;
-  minValue: number;
+
   lat: string;
   long: string;
   cityId: string;
@@ -11,8 +10,7 @@ export class Temperature {
 
   constructor(
     value: number,
-    maxValue: number,
-    minValue: number,
+
     lat: string,
     long: string,
     cityId: string,
@@ -25,8 +23,7 @@ export class Temperature {
     this.lat = lat;
     this.long = long;
     this.value = value;
-    this.minValue = minValue;
-    this.maxValue = maxValue;
+
     this.pressure = pressure;
     this.visibility = visibility;
   }
